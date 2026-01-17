@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Quiz</title>
+            <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="stylesheet" href="/frontEnd/css/style.css" />
+
+    <script defer src="play.js"></script>
+  </head>
+  <body>
+    <div class="flex mr-[500px ] " id="start" style="display: none">Start Quiz!</div>
+
+    <div class="mr-[500px] ml[500px ]" id="quiz">
+      <div id="question">QQQQQQQQ</div>
+
+      <div id="choices">
+        <div class="choice     " id="A" onclick="onPlayerSubmit('A')">1</div>
+        <div class="choice " id="B" onclick="onPlayerSubmit('B')">2</div>
+        <div class="choice " id="C" onclick="onPlayerSubmit('C')">3</div>
+        <div class="choice  " id="D" onclick="onPlayerSubmit('D')">4</div>
+      </div>
+    </div>
+    
+    
+            
+                <footer class="w-[1536px] h-[50px]" id = "footer" style="display: none">
+              
+                <div class="progress-bar-container">
+                    <div  id="progress-bar-fill" style="display: none ">progresssssssssss</div>
+                </div>
+          
+         
+                </footer>
+               
+    <div id="scoreContainer" style="display: none"></div>
+  </body>
+</html>
