@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="edit.js"></script>
+    <script defer src="/frontEnd/views/play/play.js"></script>
+    <title>Edit Quiz</title>
+</head>
+
+<body>
+    
+   <nav >
+       <div class="flex w-[1536px] h-[50px] justify-between items-center px-4 bg-gray-200">
+        <!--logo and name-->
+    <div class=" ml-6 flex gap-4 items-center justify-center ">
+        <img src="/frontEnd/img/reactIcon.png " alt="logo" class="w-6">
+    
+        <div class="text-xl font-bold ">
+            Quiz Site
+        </div>
+    </div>
+        <!--edit buttom-->
+        <div class="gap-4 flex mr-6 text-xl font-bold">
+         <a href="/frontEnd/views/edit/edit.html" class="border-2 px-4 py-2 rounded-lg   hover:bg-black hover:text-white  cursor-pointer"> Edit Quiz </a>
+      
+        <!--play quiz buttom-->
+
+        
+                  <a href="/frontEnd/views/play/play.html" class="border-2 px-4 py-2 rounded-lg   hover:bg-black hover:text-white  cursor-pointer"> Play Quiz </a>
+
+    </div>
+      </div>
+    </nav>
+
+    <!-- Main content: questions list -->
+    <main class="max-w-4xl mx-auto mt-10 px-4 bg-white shadow-lg w-full py-10 rounded">
+         <div class="container">
+        <div class="top-bar">
+            <button id="add-btn" class="mb-4 text-lg font-bold bg-purple-700 text-white rounded px-4 py-2 " onclick="createNewQuestion()">+ Add Question</button>
+        </div>
+        <div class=" " id="questions">
+            <div class="question-item">
+                <p>What does HTML stand for?</p>
+                <div class="actions">
+                    <button class="edit">📝</button>
+                    <button class="delete">🗑️</button>
+                </div>
+            </div>
+            <div class="question-item">
+                <p>What does CSS stand for?</p>
+                <div class="actions">
+                    <button class="edit">📝</button>
+                    <button class="delete">🗑️</button>
+                </div>
+            </div>
+            <div class="question-item">
+                <p>What does JS stand for?</p>
+                <div class="actions">
+                    <button class="edit">📝</button>
+                    <button class="delete">🗑️</button>
+                </div>
+            </div>
+        </div> 
+    </div>
+
+      
+    </main>
+          
+    <!--create / edit question -->
+    <div id="questionModal" class="  flex items-center justify-center " style="display: none ;">
+      <div class="bg-white w-full max-w-xl rounded shadow-lg"> 
+        <!-- Header -->
+        <div class="bg-purple-700 text-white px-6 py-4 rounded-t">
+          <h2 id="modalTitle" class="text-lg font-semibold">Create new question</h2>
+        </div>
+
+        <!-- body -->
+        <div class="px-6 py-4 space-y-4">
+          <div>
+            <label for="inputTitle" class="block text-sm font-medium mb-1">Title</label>
+            <input id="inputTitle" type="text" class="w-full border border-gray-300 rounded px-3 py-2 text-sm" placeholder="Question title">
+          </div>
+
+          <div>
+            <div class="text-sm font-medium mb-1">Answers</div>
+            <div class="space-y-2">
+              <input id="inputA" type="text" class="w-full border border-gray-300 rounded px-3 py-2 text-sm" placeholder="Answer A">
+              <input id="inputB" type="text" class="w-full border border-gray-300 rounded px-3 py-2 text-sm" placeholder="Answer B">
+              <input id="inputC" type="text" class="w-full border border-gray-300 rounded px-3 py-2 text-sm" placeholder="Answer C">
+              <input id="inputD" type="text" class="w-full border border-gray-300 rounded px-3 py-2 text-sm" placeholder="Answer D">
+            </div>
+          </div>
+
+          <div>
+            <label for="inputCorrect" class="block text-sm font-medium mb-1">Correct answer</label>
+            <select id="inputCorrect" class="w-32 border border-gray-300 rounded px-2 py-1 text-sm">
+              <option value="A">A</option>
+              <option value="B">B</option>
+              <option value="C">C</option>
+              <option value="D">D</option>
+            </select>
+          </div>
+
+          <p id="formError" class="text-sm text-red-600 hidden">Please fill</p>
+        </div>
+
+        <!-- Footer -->
+        <div class="flex justify-end gap-3 px-6 py-4 bg-gray-100 rounded-b">
+          <button id="btnCancel" class="px-4 py-2 rounded border border-gray-300 text-sm">Cancel</button>
+          <button id="btnSaveQuestion" class="px-4 py-2 rounded bg-purple-700 text-white text-sm hover:bg-purple-800" onclick="newQuestion() ">Create</button>
+        </div>
+      </div>
+    </div>
+
+</body>
+</html>
